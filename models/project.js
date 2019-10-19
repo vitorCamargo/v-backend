@@ -12,6 +12,7 @@ const ProjectSchema = new Schema({
     en: { type: String, required: true },
     pt: { type: String, required: true }
   },
+  background: { type: String, required: true },
   colorPrimary: { type: String, required: true },
   colorSecondary: { type: String },
   images: {
@@ -53,6 +54,7 @@ module.exports.updateProject = (id, updatedProject, callback) => {
 
     project.name = updatedProject.name ? updatedProject.name : project.name;
     project.description = updatedProject.description ? updatedProject.description : project.description;
+    project.background = updatedProject.background ? updatedProject.background : project.background;
     project.colorPrimary = updatedProject.colorPrimary ? updatedProject.colorPrimary : project.colorPrimary;
     project.colorSecondary = updatedProject.colorSecondary ? updatedProject.colorSecondary : project.colorSecondary;
     project.images = updatedProject.images ? updatedProject.images : project.images;

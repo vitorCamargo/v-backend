@@ -16,12 +16,13 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   const {
-    name, description, colorPrimary, colorSecondary, images, links
+    name, description, background, colorPrimary, colorSecondary, images, links
   } = req.body;
 
   const newProject = {};
   newProject.name = name;
   newProject.description = description;
+  newProject.background = background;
   newProject.colorPrimary = colorPrimary;
   newProject.colorSecondary = colorSecondary;
   newProject.images = images;
@@ -38,13 +39,14 @@ router.post('/', (req, res) => {
 
 router.put('/', (req, res) => {
   const {
-    id, name, description, colorPrimary, colorSecondary, images, links
+    id, name, description, background, colorPrimary, colorSecondary, images, links
   } = req.body;
 
   const updatedProject = {};
   
   updatedProject.name = name;
   updatedProject.description = description;
+  updatedProject.background = background;
   updatedProject.colorPrimary = colorPrimary;
   updatedProject.colorSecondary = colorSecondary;
   updatedProject.images = images;
