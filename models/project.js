@@ -4,8 +4,14 @@ const uniquevalidator = require('mongoose-unique-validator');
 const { Schema } = mongoose;
 
 const ProjectSchema = new Schema({
-  name: { type: String, required: true },
-  description: { type: String, required: true },
+  name: {
+    en: { type: String, required: true },
+    pt: { type: String, required: true }
+  },
+  description: {
+    en: { type: String, required: true },
+    pt: { type: String, required: true }
+  },
   colorPrimary: { type: String, required: true },
   colorSecondary: { type: String },
   images: {
