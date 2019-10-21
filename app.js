@@ -6,6 +6,7 @@ const mongoose = require ('mongoose');
 const getSecret = require('./secrets');
 
 const project = require ('./routes/project');
+const message = require ('./routes/message');
 
 const app = express();
 const API_PORT = process.env.PORT || 3001;
@@ -29,6 +30,7 @@ app.use(function(req, res, next) {
 app.use(express.static('public'));
 
 app.use('/api/projects', project);
+app.use('/api/messages', message);
 
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, './public', 'index.html'));
